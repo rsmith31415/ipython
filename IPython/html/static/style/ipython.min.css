@@ -794,6 +794,7 @@ div.out_prompt_overlay:hover {
 }
 div.output_prompt {
   color: darkred;
+  flex: 10%;
 }
 /* This class is the outer container of all output sections. */
 div.output_area {
@@ -874,12 +875,14 @@ div.output_area pre {
    the prompt div. */
 div.output_subarea {
   padding: 0.4em;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
+  flex: 90%;
+  min-width: 1em;
+}
+div.output_subarea img,
+iframe,
+video,
+audio {
+  max-width: 100%;
 }
 /* The rest of the output_* classes are for special styling of the different
    output types */
@@ -1111,6 +1114,7 @@ div.output_unrecognized a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
 }
 .rendered_html * + img {
   margin-top: 1em;

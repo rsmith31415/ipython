@@ -665,7 +665,8 @@ define([
         // When the svg renders completely, measure it's size and set the parent
         // div to that size.  Then set the svg to 100% the size of the parent
         // div and make the parent div resizable.  
-        this._dblclick_to_reset_size(svg_area, true, false);
+
+        //this._dblclick_to_reset_size(svg_area, true, false);
 
         svg_area.append(svg);
         toinsert.append(svg_area);
@@ -735,7 +736,7 @@ define([
         }
         img[0].src = 'data:image/png;base64,'+ png;
         set_width_height(img, md, 'image/png');
-        this._dblclick_to_reset_size(img);
+        //this._dblclick_to_reset_size(img);
         toinsert.append(img);
         element.append(toinsert);
         return toinsert;
@@ -753,7 +754,7 @@ define([
         }
         img[0].src = 'data:image/jpeg;base64,'+ jpeg;
         set_width_height(img, md, 'image/jpeg');
-        this._dblclick_to_reset_size(img);
+        //this._dblclick_to_reset_size(img);
         toinsert.append(img);
         element.append(toinsert);
         return toinsert;
