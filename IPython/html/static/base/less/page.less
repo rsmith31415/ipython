@@ -6,14 +6,16 @@
 
 
 html, body {
-    min-height: 100%;
-    height: 100%;
-    overflow: hidden; // Prevents scrollbar in html element
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    hidden: overflow;
 }
 
 body {
     background-color: @body-bg;
-    overflow: visible; // We want the scrollbar here
     display: flex;
     flex-direction: column;
 }
@@ -88,10 +90,11 @@ body {
     width: 100%;
     display: none;
     .border-box-sizing();
-    overflow: auto;
+    overflow: scroll; 
     @media print {
       // force auto-height on print (overrides manual resizing in live view)
       height: auto !important;
+      overflow: hidden;
     }
 }
 
