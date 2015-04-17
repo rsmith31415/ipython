@@ -6028,8 +6028,6 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-.container_:before,
-.container_:after,
 .item_buttons:before,
 .item_buttons:after {
   content: " ";
@@ -6050,7 +6048,6 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.container_:after,
 .item_buttons:after {
   clear: both;
 }
@@ -8127,27 +8124,6 @@ label {
 }
 /* Make the page background atleast 100% the height of the view port */
 /* Make the page itself atleast 70% the height of the view port */
-.container_ {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-@media screen and (min-width: 768px) {
-  .container_ {
-    width: 768px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .container_ {
-    width: 940px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .container_ {
-    width: 1140px;
-  }
-}
 .border-box-sizing {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -8411,12 +8387,9 @@ div.traceback-wrapper {
  */
 html,
 body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  hidden: overflow;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
 }
 body {
   background-color: #ffffff;
@@ -8424,6 +8397,10 @@ body {
   flex-direction: column;
 }
 @media print {
+  html,
+  body {
+    overflow: visible;
+  }
   body {
     display: block;
   }
@@ -8494,8 +8471,8 @@ body {
 }
 @media print {
   #site {
-    height: auto !important;
-    overflow: hidden;
+    display: block;
+    overflow: visible;
   }
 }
 /* Smaller buttons */
@@ -10489,6 +10466,11 @@ div#notebook_panel {
     min-height: 0;
     -webkit-box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
+  }
+}
+@media print {
+  #notebook-container {
+    width: 100%;
   }
 }
 div.ui-widget-content {
